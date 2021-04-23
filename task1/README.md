@@ -68,3 +68,4 @@ https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-factory-scopes
 https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-factory-lifecycle
 https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-enabling
+https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-postconstruct-and-predestroy-annotations
