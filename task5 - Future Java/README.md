@@ -10,7 +10,6 @@ Our service performs very long calculations one by one, are we able to increase 
 - Add log before calculations starts
 - Add log after calculations ends
 - Use Future to parallel calculations
-
 ```java
     private ExecutorService executor = Executors.newSingleThreadExecutor();
 ```
