@@ -35,6 +35,8 @@ Our task will be to use an external API and download data from it for the needs 
       ResponseEntity<String> result = restTemplate.postForEntity(uri, request, String.class);
 ```
 - Generate GitHub PersonalAccessToken and use `https://api.github.com/user/starred` to get information about stars given by user (owner of PersonalAccessToken)
+- Create repo by using PersonalAcces but first visit
+    - https://docs.github.com/en/rest/reference/repos#create-a-repository-for-the-authenticated-user
 
 ## Links
 - https://www.baeldung.com/rest-template
