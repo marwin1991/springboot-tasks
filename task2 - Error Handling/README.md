@@ -10,7 +10,8 @@ Error handling is one of the most important aspects of web application developme
 ### Exceptions in Java
 - Add new type of exception `ProductNotFoundException` that extends RuntimeException
 - Implement `findById` in `ProductRepository` to always throw `ProductNotFoundException`
-- Pass your message across application by using the new field `private String errorMsg` in `ProductNotFoundException`
+- Add new field `private String errorMsg` in `ProductNotFoundException` and set up this in `ProductRepository` by
+  calling constructor with argument `"There is no product with id: " + id`
 - Change `extends RuntimeException` in `ProductNotFoundException` to `extends Exception`. What changed?
 - Read about https://howtodoinjava.com/java/exception-handling/checked-vs-unchecked-exceptions-in-java/
 
@@ -18,13 +19,14 @@ Error handling is one of the most important aspects of web application developme
 
 #### First, the simplest handling
 - Add on your exception
+
 ```java
-@ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class MyResourceNotFoundException extends RuntimeException {
-    public MyResourceNotFoundException() {
-        super();
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
+    public class MyResourceNotFoundException extends RuntimeException {
+        public MyResourceNotFoundException() {
+            super();
+        }
     }
-}
 ```
 
 #### In controller
@@ -38,8 +40,10 @@ public class MyResourceNotFoundException extends RuntimeException {
         //
     }
 ```
-- Change implementation of handleException to return ResponseEntity and as method argument it takes `MyResourceNotFoundException ex` or `RuntimeException ex` or `Exception ex`
-- Add some implementation to handleException to print `errorMsg`
+
+- Change implementation of handleException to return ResponseEntity and as method argument it
+  takes `MyResourceNotFoundException ex` or `RuntimeException ex` or `Exception ex`
+- Add some implementation to handleException to print `errorMsg` (Don't forget about getter)
 
 
 #### ControllerAdvice
@@ -48,7 +52,7 @@ public class MyResourceNotFoundException extends RuntimeException {
 - Add in your controller
 ```java
 @ControllerAdvice
-class ExceptionHandler {
+public class GeneralExceptionHandler {
 
   @ResponseBody
   @ExceptionHandler(ProductUpdateException.class)
@@ -61,6 +65,8 @@ class ExceptionHandler {
 
 
 ## Links
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
-https://howtodoinjava.com/java/exception-handling/checked-vs-unchecked-exceptions-in-java/
+
+- https://www.javamex.com/tutorials/exceptions/ExceptionHierarchy.png
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+- https://howtodoinjava.com/java/exception-handling/checked-vs-unchecked-exceptions-in-java/
