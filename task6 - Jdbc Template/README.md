@@ -11,7 +11,7 @@ Using Spring JPA is a great help in quick application development, but we can me
 ```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
 spring.datasource.username=postgres
-spring.datasource.password=admin
+spring.datasource.password=password
 ```
 - Use `NamedParameterJdbcTemplate` and `JdbcTemplate` to implement `ProductRepository`
 ```java
