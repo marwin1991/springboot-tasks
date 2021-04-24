@@ -43,8 +43,8 @@ public class TransactionFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
  
-        HttpServletRequest req = (HttpServletRequest) request;
-        HttpServletRequest res = (HttpServletRequest) response;
+        //HttpServletRequest req = (HttpServletRequest) request; // use it to get http method: req.getMethod()
+        //HttpServletRequest res = (HttpServletRequest) response; 
         //action before request
         chain.doFilter(request, response);
         //action after request
@@ -63,9 +63,10 @@ public class TransactionFilter implements Filter {
 - Test capabilities Spring Boot Actuator with your browser.
 
 ## Links
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
-https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-factory-scopes
-https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-factory-lifecycle
-https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-enabling
-https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-postconstruct-and-predestroy-annotations
+
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+- https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-factory-scopes
+- https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-factory-lifecycle
+- https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-enabling
+- https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-postconstruct-and-predestroy-annotations

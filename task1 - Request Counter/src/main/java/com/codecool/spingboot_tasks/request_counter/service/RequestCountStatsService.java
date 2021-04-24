@@ -26,7 +26,7 @@ public class RequestCountStatsService {
         } else {
             stats.put(method, 1);
         }
-        System.out.println(stats.size());
+        System.out.println("Unique methods number: " + stats.size() + " counter for " + method + ": " + stats.get(method));
     }
 
     public Statistics getStatistics() throws Exception {
