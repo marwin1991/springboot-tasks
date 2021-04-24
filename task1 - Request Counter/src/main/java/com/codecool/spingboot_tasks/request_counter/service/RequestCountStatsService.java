@@ -9,17 +9,27 @@ import java.util.Map;
 @Service
 public class RequestCountStatsService {
 
+    public static String GET = "GET";
+    public static String POST = "POST";
+    public static String PUT = "PUT";
+    public static String DELETE = "DELETE";
+    public static String PATCH = "PATCH";
     /*
      * Map holding statistics of methods execution. key is method name: GET,PUT etc.
      * value is and integer number representing number of executions
      */
-    private Map<String, Integer> stats = new HashMap<>();
+    private final Map<String, Integer> stats = new HashMap<>();
 
-    public void increaseCounter(String method){
-
+    public void increaseCounter(String method) {
+        if (stats.containsKey(method)) {
+            stats.put(method, stats.get(method) + 1);
+        } else {
+            stats.put(method, 1);
+        }
+        System.out.println(stats.size());
     }
 
-    public Statistics getStatistics(){
-        return null;
+    public Statistics getStatistics() throws Exception {
+        throw new Exception("Not implemented");
     }
 }
