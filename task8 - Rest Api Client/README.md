@@ -39,6 +39,6 @@ Our task will be to use an external API and download data from it for the needs 
 ## Links
 - https://www.baeldung.com/rest-template
 - https://www.baeldung.com/spring-webclient-resttemplate
-  https://howtodoinjava.com/spring-boot2/resttemplate/spring-restful-client-resttemplate-example/
-  https://howtodoinjava.com/spring-boot2/resttemplate/resttemplate-post-json-example/
+- https://howtodoinjava.com/spring-boot2/resttemplate/spring-restful-client-resttemplate-example/
+- https://howtodoinjava.com/spring-boot2/resttemplate/resttemplate-post-json-example/
 
