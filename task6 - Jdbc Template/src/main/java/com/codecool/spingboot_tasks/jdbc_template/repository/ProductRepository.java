@@ -12,7 +12,7 @@ public class ProductRepository {
         throw new IllegalStateException();
     }
 
-    public List<Product> findById(long id) {
+    public Product findById(long id) {
         return null;
     }
 
