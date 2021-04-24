@@ -10,30 +10,29 @@ import java.util.List;
 public class ProductController {
 
     @GetMapping("/products")
-    public List<Product> getProducts(){
+    public List<Product> getProducts() {
         return Collections.emptyList();
     }
 
     @GetMapping("/products/{id}")
-    public Product getProduct(@PathVariable long id){
+    public Product getProduct(@PathVariable long id) {
         return new Product();
     }
 
     @PostMapping("/products")
-    public Product createProducts(@RequestBody Product product){
+    public Product createProducts(@RequestBody Product product) {
         return new Product();
     }
 
     @PatchMapping("/products")
-    public Product updateProducts(@RequestBody Product product){
+    public Product updateProducts(@RequestBody Product product) {
         return new Product();
     }
 
     @DeleteMapping("/products")
-    public void createProducts(@PathVariable long id){
+    public void createProducts(@PathVariable long id) {
 
     }
-
 
 
 }
