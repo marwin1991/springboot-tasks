@@ -6,13 +6,32 @@ Using Spring JPA is a great help in quick application development, but we can me
 - Usage JdbcTemplates
 
 ## Tasks
-- Add `Spring Boot Starter JDBC` to your dependencies.
+- Add `Spring Boot Starter JDBC` and `PostgresSQl` to your dependencies.
 - Configure connection to postgres database in `application.properties`
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+spring.datasource.url=jdbc:postgresql://localhost:5432/jdbctemplate
 spring.datasource.username=postgres
-spring.datasource.password=password
+spring.datasource.password=masterkey
+spring.datasource.driver-class-name=org.postgresql.Driver
 ```
+```sql
+CREATE SEQUENCE public.products_id_seq INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1;
+
+ALTER SEQUENCE public.products_id_seq OWNER TO postgres;
+
+CREATE TABLE public.products
+(
+    id bigint NOT NULL DEFAULT nextval('products_id_seq'::regclass),
+    name character varying COLLATE pg_catalog."default" NOT NULL,
+    price numeric(10,0) NOT NULL,
+    CONSTRAINT products_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.products OWNER to postgres;
+```
+
 - Use `NamedParameterJdbcTemplate` and `JdbcTemplate` to implement `ProductRepository`
 ```java
 private final NamedParameterJdbcTemplate namedTemplate;
@@ -27,3 +46,4 @@ private final JdbcTemplate template;
 - https://spring.io/guides/gs/relational-data-access/
 - https://dzone.com/articles/bounty-spring-boot-and-postgresql-database
 - https://www.baeldung.com/spring-jdbc-jdbctemplate
+- https://www.liquibase.org/
