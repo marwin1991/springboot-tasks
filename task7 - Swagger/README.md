@@ -90,7 +90,8 @@ public class Product {
 ```
 
 ## Links
-https://swagger.io/
-https://springfox.github.io/springfox/
-https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
+- https://swagger.io/
+- https://springfox.github.io/springfox/
+- https://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
+- https://editor.swagger.io/
 
