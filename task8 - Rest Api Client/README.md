@@ -13,8 +13,8 @@ Our task will be to use an external API and download data from it for the needs 
 ```java
       RestTemplate restTemplate = new RestTemplate();
       String url = "https://api.github.com/users/your_git_nick";
-      ResponseEntity<String> response = restTemplate.getForEntity(fooResourceUrl, String.class);
-      log.info(response.getStatusCode());
+      ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+      log.info(response.getStatusCode().toString());
       log.info(response.getBody());
 ```  
 
