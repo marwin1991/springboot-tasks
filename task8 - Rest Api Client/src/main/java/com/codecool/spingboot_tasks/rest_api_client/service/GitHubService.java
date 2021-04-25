@@ -50,4 +50,12 @@ public class GitHubService {
         return dto;
     }
 
+    public GitHubRepoResponse getReposWithGivenStar(String userName){
+        return client.getReposWithGivenStar(userName);
+    }
+
+    public void createRepo(String userName, String repoName){
+        client.createRepo(userName, repoName);
+    }
+
 }

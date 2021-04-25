@@ -5,6 +5,8 @@ import lombok.Data;
 
 @Data
 public class GitHubRepo {
+    private String name;
+
     private boolean fork;
 
     @JsonProperty("stargazers_count")
