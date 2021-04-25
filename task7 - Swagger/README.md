@@ -34,6 +34,9 @@ public class SwaggerConfiguration {
 - You can add more info by defining ApiInfo in `SwaggerConfiguration` and adding `.apiInfo(apiInfo())` after
 line `return new Docket(DocumentationType.SWAGGER_2)`
 ```java
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
+
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
             .title("Some title")
@@ -46,10 +49,23 @@ line `return new Docket(DocumentationType.SWAGGER_2)`
             .build();
     }
 ```
-- Visit `http://localhost:8080/v2/api-docs`
-- You can change it by using `springfox.documentation.swagger.v2.path` property.
-- Now, visit: `http://localhost:8080/swagger-ui/`
+
+- Visit http://localhost:8080/v2/api-docs
+- Now, visit: http://localhost:8080/swagger-ui/
+- You can change it by using `springfox.documentation.swagger.v2.path` and `springfox.documentation.swagger-ui.base-url`
+  property.
+
+```properties
+springfox.documentation.swagger.v2.path=/myapi/docs
+springfox.documentation.swagger-ui.base-url=/hello
+```  
+
+- And now:
+    - Visit http://localhost:8080/myapi/docs
+    - Now, visit: http://localhost:8080/hello/swagger-ui/
+
 - Add more description to your API:
+
 ```java
     @ApiOperation("Operation to list all products")
     @GetMapping("/products")
@@ -57,6 +73,7 @@ line `return new Docket(DocumentationType.SWAGGER_2)`
         return Collections.emptyList();
     }
 ```
+
 - and:
 ```java
 import io.swagger.annotations.ApiResponse;
