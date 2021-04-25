@@ -47,4 +47,6 @@ Our task will be to use an external API and download data from it for the needs 
 - https://www.baeldung.com/spring-webclient-resttemplate
 - https://howtodoinjava.com/spring-boot2/resttemplate/spring-restful-client-resttemplate-example/
 - https://howtodoinjava.com/spring-boot2/resttemplate/resttemplate-post-json-example/
-
+## Links - Cloud
+- https://spring.io/projects/spring-cloud
+- https://developer.okta.com/blog/2019/05/22/java-microservices-spring-boot-spring-cloud
