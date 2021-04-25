@@ -37,6 +37,10 @@ Our task will be to use an external API and download data from it for the needs 
 - Generate GitHub PersonalAccessToken(PAT) and use `https://api.github.com/user/starred` to get information about stars given by user (owner of PersonalAccessToken)
 - Create repo by using PAT but first visit
     - https://docs.github.com/en/rest/reference/repos#create-a-repository-for-the-authenticated-user
+  
+- Extra Tasks:
+  - Create 3 SpringBoot applications on ports 8081 8082 8083 and create Rest Client carousel, where 
+  each application calls next one  (8081 -> 8082 -> 8083 -> 8081)(Hint: Add some sleep)
 
 ## Links
 - https://www.baeldung.com/rest-template
