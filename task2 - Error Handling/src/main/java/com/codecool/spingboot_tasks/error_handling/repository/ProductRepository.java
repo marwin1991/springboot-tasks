@@ -1,6 +1,5 @@
 package com.codecool.spingboot_tasks.error_handling.repository;
 
-import com.codecool.spingboot_tasks.error_handling.exception.ProductNotFoundException;
 import com.codecool.spingboot_tasks.error_handling.model.Product;
 import org.springframework.stereotype.Repository;
 
