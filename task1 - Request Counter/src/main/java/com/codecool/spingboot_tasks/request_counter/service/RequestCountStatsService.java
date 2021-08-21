@@ -4,6 +4,7 @@ import com.codecool.spingboot_tasks.request_counter.model.Statistics;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -21,10 +22,10 @@ public class RequestCountStatsService {
     private final Map<String, Integer> stats = new HashMap<>();
 
     public void increaseCounter(String method) throws Exception {
-        throw new Exception("Not implemented");
+        throw new RuntimeException("Not implemented");
     }
 
-    public Statistics getStatistics() throws Exception {
-        throw new Exception("Not implemented");
+    public List<Statistics> getStatistics() {
+        throw new RuntimeException("Not implemented");
     }
 }
