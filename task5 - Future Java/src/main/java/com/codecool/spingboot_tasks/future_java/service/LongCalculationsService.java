@@ -19,7 +19,6 @@ public class LongCalculationsService {
 
     public int calc(){
         LongCalculations longCalculations = new LongCalculations();
-
-        return longCalculations.firstLongCalculation() + longCalculations.secondLongCalculation()
+        return longCalculations.firstLongCalculation() + longCalculations.secondLongCalculation();
     }
 }
