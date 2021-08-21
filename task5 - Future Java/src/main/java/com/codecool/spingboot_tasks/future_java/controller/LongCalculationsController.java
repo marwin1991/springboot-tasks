@@ -16,7 +16,7 @@ public class LongCalculationsController {
     }
 
     @GetMapping("/calc")
-    public BigInteger calc(){
+    public int calc(){
         return service.calc();
     }
 }

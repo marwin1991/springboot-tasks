@@ -16,41 +16,10 @@ import java.util.concurrent.Future;
 @Service
 public class LongCalculationsService {
 
-    private static final int I = 1000;
 
-    private ExecutorService executor = Executors.newFixedThreadPool(I);
-
-    private final Logger log = LoggerFactory.getLogger(LongCalculationsService.class);
-
-    public BigInteger calc(){
-        log.info("Rozpoczęcie obliczeń");
+    public int calc(){
         LongCalculations longCalculations = new LongCalculations();
 
-        List<Future<BigInteger>> futures = new LinkedList<>();
-        for(int i = 0; i < I; i++){
-            int finalI = i;
-            futures.add(executor.submit(() -> {
-                log.info("Rozpoczęto " + finalI + " obliczenie");
-                BigInteger aRes = longCalculations.firstLongCalculation();
-                log.info("Zakończono " + finalI + " obliczenie");
-                return aRes;
-            }));
-        }
-
-        log.info("Przed try");
-
-        try {
-            BigInteger sum = BigInteger.ZERO;
-            for(int i = 0; i < I; i++) {
-                sum = sum.add(futures.get(0).get());
-            }
-
-            log.info("Zakończono obliczenia");
-            return sum;
-
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
-            throw new IllegalStateException();
-        }
+        return longCalculations.firstLongCalculation() + longCalculations.secondLongCalculation()
     }
 }
