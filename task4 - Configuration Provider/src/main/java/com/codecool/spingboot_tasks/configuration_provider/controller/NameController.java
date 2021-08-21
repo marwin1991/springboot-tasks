@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.PostConstruct;
 
 @RestController
-@Scope("${name_controller.scope:singleton}")
 public class NameController {
 
     private final NameService nameService;
@@ -22,7 +21,7 @@ public class NameController {
         this.nameService = nameService;
     }
 
-    @GetMapping("${name_controller.about:/about}")
+    @GetMapping("/about")
     public String about(){
         return nameService.getName();
     }

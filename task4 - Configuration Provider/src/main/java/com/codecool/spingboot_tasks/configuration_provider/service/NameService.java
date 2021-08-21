@@ -9,15 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class NameService {
 
-    private Gson gson;
-
-    @Value("${client.name:CodeCool}")
-    private String name;
-
-    @Autowired
-    public NameService(Gson gson) {
-        this.gson = gson;
-    }
+    private static final String name = "CodeCool"
 
     public String getName(){
         return name;
