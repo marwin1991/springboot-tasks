@@ -15,41 +15,20 @@ import java.util.Map;
 @Repository
 public class ProductRepository {
 
-    private final NamedParameterJdbcTemplate namedTemplate;
-    private final JdbcTemplate template;
-
-    @Autowired
-    public ProductRepository(NamedParameterJdbcTemplate namedTemplate, JdbcTemplate template) {
-        this.namedTemplate = namedTemplate;
-        this.template = template;
-    }
-
     public List<Product> findAll(){
-        String query = "SELECT * FROM products";
-        return template.query(query, new ProductMapper());
+        return null
     }
 
     public List<Integer> findAllPrices(){
-        String query = "SELECT price FROM products";
-        return template.queryForList(query, Integer.class);
+        return null
     }
 
     public List<String> findAllNames(){
-        String query = "SELECT name FROM products";
-        return template.queryForList(query, String.class);
+        return null
     }
 
     public Product findById(long id) {
-        String query = "SELECT * FROM products WHERE id = :id";
-
-//        Alternative
-//        Map<String, Object> params = new HashMap<>();
-//        params.put("id", id);
-
-        SqlParameterSource params = new MapSqlParameterSource()
-                .addValue("id", id);
-
-        return namedTemplate.queryForObject(query, params, new ProductMapper());
+        return null
     }
 
     public Product create(Product product) {
