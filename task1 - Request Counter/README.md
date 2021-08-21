@@ -58,9 +58,27 @@ public class TransactionFilter implements Filter {
 
 
 ### Extra Task: Spring Boot Actuator 
-- Add Spring Boot Actuator to your pom.xml
+- Add Spring Boot Actuator and Micrometer to your `pom.xml`
+```xml
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+        </dependency>
+```
+- Configure application in `application.properties`
+```properties
+management.endpoint.info.enabled=true
+#management.endpoint.shutdown.enabled=true #dangerous 
+management.endpoints.web.exposure.include=*
+```
 - How can we use Spring Boot Actuator to achieve 'request counting' functionality ?
 - Test capabilities Spring Boot Actuator with your browser.
+- Why to use metrics?
+- WARNING: Make sure that diagnostic endpoints are only available to you!
 
 ## Links
 
