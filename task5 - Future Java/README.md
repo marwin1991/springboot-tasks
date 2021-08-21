@@ -17,6 +17,6 @@ Our service performs very long calculations one by one, are we able to increase 
 
 
 ## Links
-https://www.baeldung.com/java-future
-https://www.baeldung.com/java-executor-service-tutorial
-https://stackoverflow.com/questions/4956822/whats-the-difference-between-future-and-futuretask-in-java
+- https://www.baeldung.com/java-future
+- https://www.baeldung.com/java-executor-service-tutorial
+- https://stackoverflow.com/questions/4956822/whats-the-difference-between-future-and-futuretask-in-java
