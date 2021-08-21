@@ -4,14 +4,10 @@ import com.codecool.spingboot_tasks.request_counter.service.RequestCountStatsSer
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.annotation.SessionScope;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import java.util.ArrayList;
 import java.util.List;
 
-@SessionScope
 @RestController
 public class RequestCounterController {
 
