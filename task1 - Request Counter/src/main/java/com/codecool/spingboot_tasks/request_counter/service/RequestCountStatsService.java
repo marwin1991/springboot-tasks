@@ -20,7 +20,7 @@ public class RequestCountStatsService {
      */
     private final Map<String, Integer> stats = new HashMap<>();
 
-    public void increaseCounter(String method) {
+    public void increaseCounter(String method) throws Exception {
         throw new Exception("Not implemented");
     }
 
