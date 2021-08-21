@@ -21,50 +21,32 @@ public class RequestCounterController {
 
     @Autowired
     public RequestCounterController(RequestCountStatsService service) throws InterruptedException {
-        //Thread.sleep(10000);
         this.shoppingCart = new ArrayList<>();
         this.service = service;
     }
 
-    @PostConstruct
-    public void init() {
-        System.out.println("RequestCounterController has bean created");
-    }
-
-    @PreDestroy
-    public void destroy() {
-        System.out.println("RequestCounterController will be deleted");
-    }
-
     @GetMapping("/api/requests")
     public ResponseEntity<Void> get() throws InterruptedException {
-//        System.out.println("GET REQUEST");
-//        service.increaseCounter(GET);
-        Thread.sleep(5000);
         return ResponseEntity.ok().build();
     }
 
     @PostMapping("/api/requests")
     public ResponseEntity<Void> post() {
-//        service.increaseCounter(POST);
         return ResponseEntity.ok().build();
     }
 
     @PutMapping("/api/requests")
     public ResponseEntity<Void> put() {
-//        service.increaseCounter(PUT);
         return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/api/requests")
     public ResponseEntity<Void> delete() {
-//        service.increaseCounter(DELETE);
         return ResponseEntity.ok().build();
     }
 
     @PatchMapping("/api/requests")
     public ResponseEntity<Void> patch() {
-//        service.increaseCounter(PATCH);
         return ResponseEntity.ok().build();
     }
 

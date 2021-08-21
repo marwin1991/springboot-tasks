@@ -21,12 +21,7 @@ public class RequestCountStatsService {
     private final Map<String, Integer> stats = new HashMap<>();
 
     public void increaseCounter(String method) {
-        if (stats.containsKey(method)) {
-            stats.put(method, stats.get(method) + 1);
-        } else {
-            stats.put(method, 1);
-        }
-        System.out.println("Unique methods number: " + stats.size() + " counter for " + method + ": " + stats.get(method));
+        throw new Exception("Not implemented");
     }
 
     public Statistics getStatistics() throws Exception {
