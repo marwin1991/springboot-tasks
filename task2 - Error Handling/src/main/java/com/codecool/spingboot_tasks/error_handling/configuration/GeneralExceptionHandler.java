@@ -11,11 +11,4 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class GeneralExceptionHandler {
 
-    @ResponseBody
-    @ExceptionHandler(ProductNotFoundException.class)
-    @ResponseStatus(value = HttpStatus.NOT_FOUND)
-    public BackendError handleProductNotFoundException(ProductNotFoundException ex) {
-        return new BackendError(ex.getMessage(), 2);
-    }
-
 }

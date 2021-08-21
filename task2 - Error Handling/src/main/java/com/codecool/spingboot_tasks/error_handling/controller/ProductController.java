@@ -27,14 +27,4 @@ public class ProductController {
         return productService.getProduct(id);
     }
 
-//    @ExceptionHandler({ IllegalStateException.class})
-//    public void handleException(Exception e) {
-//        System.out.println(e.getMessage());
-//    }
-
-//    @ExceptionHandler(Exception.class)
-//    //@ExceptionHandler({ ProductCreateException.class, ProductCreateException2.class })
-//    public ResponseEntity<String> handleProductCreateException(Exception e) {
-//        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
-//    }
 }

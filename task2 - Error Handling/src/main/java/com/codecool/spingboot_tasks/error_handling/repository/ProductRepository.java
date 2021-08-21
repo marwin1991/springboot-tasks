@@ -14,6 +14,6 @@ public class ProductRepository {
     }
 
     public List<Product> findById(long id) {
-        throw new ProductNotFoundException("There is no product with id: " + id);
+        throw new IllegalStateException();
     }
 }
