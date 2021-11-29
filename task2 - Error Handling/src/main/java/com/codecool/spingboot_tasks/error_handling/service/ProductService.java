@@ -23,4 +23,12 @@ public class ProductService {
     public List<Product> getProduct(long id) {
         return productRepository.findById(id);
     }
+
+    public Product createProduct(Product product) {
+        return productRepository.save(product);
+    }
+
+    public Product updateProduct(Product product) {
+        return productRepository.update(product);
+    }
 }

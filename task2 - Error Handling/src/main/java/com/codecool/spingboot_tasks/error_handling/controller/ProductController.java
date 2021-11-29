@@ -1,10 +1,10 @@
 package com.codecool.spingboot_tasks.error_handling.controller;
 
+import com.codecool.spingboot_tasks.error_handling.exeption.ProductCreateException;
 import com.codecool.spingboot_tasks.error_handling.model.Product;
 import com.codecool.spingboot_tasks.error_handling.service.ProductService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +26,22 @@ public class ProductController {
     public List<Product> getProducts(@PathVariable long id) {
         return productService.getProduct(id);
     }
+
+    @PostMapping("/products")
+    public Product createProduct(@RequestBody Product product){
+        return productService.createProduct(product);
+    }
+
+    @PatchMapping("/products")
+    public Product updateProduct(@RequestBody Product product){
+        return productService.updateProduct(product);
+    }
+
+//    @ExceptionHandler(ProductCreateException.class)
+//    //@ExceptionHandler({ ProductCreateException.class, ProductCreateException2.class })
+//    public ResponseEntity<String> handleProductCreateException(ProductCreateException e) {
+//        System.out.println(e.getSomeValue());
+//        return ResponseEntity.status(400).body("Nie udało utworzyć się produktu");
+//    }
 
 }

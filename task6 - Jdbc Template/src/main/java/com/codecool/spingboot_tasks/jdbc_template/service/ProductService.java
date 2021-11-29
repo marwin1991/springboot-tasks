@@ -5,6 +5,7 @@ import com.codecool.spingboot_tasks.jdbc_template.repository.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService {
@@ -19,7 +20,7 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public Product getProduct(long id) {
+    public Optional<Product> getProduct(long id) {
         return productRepository.findById(id);
     }
 

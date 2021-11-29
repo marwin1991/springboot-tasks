@@ -1,9 +1,11 @@
 package com.codecool.spingboot_tasks.jdbc_template.controller;
 
+import com.codecool.spingboot_tasks.jdbc_template.NotFoundException;
 import com.codecool.spingboot_tasks.jdbc_template.model.Product;
 import com.codecool.spingboot_tasks.jdbc_template.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.List;
 
@@ -24,7 +26,7 @@ public class ProductController {
 
     @GetMapping("/products/{id}")
     public Product getProduct(@PathVariable long id){
-        return productService.getProduct(id);
+        return productService.getProduct(id).orElseThrow(NotFoundException::new);
     }
 
     @PostMapping("/products")
