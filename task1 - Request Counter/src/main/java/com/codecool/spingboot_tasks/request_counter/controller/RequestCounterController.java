@@ -2,6 +2,7 @@ package com.codecool.spingboot_tasks.request_counter.controller;
 
 import com.codecool.spingboot_tasks.request_counter.service.RequestCountStatsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,12 +23,15 @@ public class RequestCounterController {
     }
 
     @GetMapping("/api/requests")
-    public ResponseEntity<Void> get() throws InterruptedException {
+    public ResponseEntity<Void> get() throws Exception {
+        service.increaseCounter(RequestCountStatsService.GET);
+        System.out.println(service.getStatistics().get(1));
         return ResponseEntity.ok().build();
     }
 
     @PostMapping("/api/requests")
-    public ResponseEntity<Void> post() {
+    public ResponseEntity<Void> post() throws Exception {
+        service.increaseCounter(RequestCountStatsService.POST);
         return ResponseEntity.ok().build();
     }
 
